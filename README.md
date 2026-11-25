@@ -12,7 +12,8 @@ dev/
   debugging/      원인 추적
   review/         코드 리뷰 요청·수용
   git-workflow/   worktree, 브랜치 마무리
-non-dev/    개발 외 작업 (글쓰기, 리서치, 생산성 등)
+non-dev/
+  visualization/  다이어그램, 차트 등 시각 산출물
 meta/       skill을 쓰거나 만들거나 관리하는 skills
 _licenses/  출처별 원본 라이선스 전문
 _templates/ 새 skill 추가용 템플릿
@@ -45,6 +46,7 @@ _templates/ 새 skill 추가용 템플릿
 | [requesting-code-review](dev/review/requesting-code-review/) | dev/review | 작업 완료·머지 전에 요구사항 충족 여부 리뷰 요청 | review | obra/superpowers |
 | [finishing-a-development-branch](dev/git-workflow/finishing-a-development-branch/) | dev/git-workflow | 구현 완료 후 머지/PR/정리 등 통합 방식 결정 | git, merge, pr | obra/superpowers |
 | [using-git-worktrees](dev/git-workflow/using-git-worktrees/) | dev/git-workflow | 기능 작업을 격리된 git worktree에서 시작 | git, worktree | obra/superpowers |
+| [diagram-design](non-dev/visualization/diagram-design/) | non-dev/visualization | 아키텍처·시퀀스·ER부터 차트·여정 지도까지 정돈된 다이어그램을 HTML/SVG/PNG로 생성 (Mermaid·draw.io 등 가져오기) | diagram, chart, svg | cathrynlavery/diagram-design |
 | [diagnosing-superpowers](meta/diagnosing-superpowers/) | meta | superpowers 세션이 잘못 흘러간 원인을 사후 진단 | retrospective | obra/superpowers |
 | [using-superpowers](meta/using-superpowers/) | meta | 대화 시작 시 skill을 찾아 먼저 호출하도록 하는 사용 규칙 | skill-usage | obra/superpowers |
 | [writing-skills](meta/writing-skills/) | meta | 새 skill 작성·수정과 배포 전 동작 검증 | skill-authoring | obra/superpowers |
