@@ -2,6 +2,26 @@
 
 에이전트·라이브러리·오픈소스에서 발견한 유용한 skills 모음.
 
+- **목적** — 쓸 만한 agent skill을 출처·라이선스와 함께 모아 두고, 실제로 쓰면서 검증된 것만 골라 키운다.
+- **범위** — 라이선스가 확인된 공개 skill의 원본 사본. 회사 내부 skill 원본은 넣지 않는다.
+- **원칙** — 개수보다 실제 사용 빈도와 검증 수준. 집중 관리 대상은 아래 [집중 관리 대상](#집중-관리-대상)에 따로 표시한다.
+
+## 사용 방법
+
+skill 폴더(`SKILL.md`가 있는 폴더)를 통째로 에이전트의 skills 경로에 복사한다.
+
+| 에이전트 | 개인 전역 | 프로젝트 한정 |
+|---|---|---|
+| Claude Code | `~/.claude/skills/<skill-name>/` | `<project>/.claude/skills/<skill-name>/` |
+| Codex | `~/.codex/skills/<skill-name>/` | — |
+
+```bash
+cp -R dev/review/code-review ~/.claude/skills/
+```
+
+- 같은 묶음 안에서 서로를 참조하는 skill(예: `dev/web-quality/*`)은 함께 복사한다.
+- 원본 사용 조건은 각 폴더의 `SOURCE.md`와 `_licenses/`를 따른다.
+
 ## 구조
 
 ```
@@ -36,6 +56,19 @@ _templates/ 새 skill 추가용 템플릿
 4. 아래 목록 표에 한 줄 추가
 
 > 라이선스가 없는 원본은 복사하지 않고 `SOURCE.md`에 링크와 메모만 남긴다 (이 레포는 public).
+> 원본을 고쳐 쓰고 싶으면 원본 폴더는 그대로 두고, 이름을 바꾼 사본을 `custom/` 아래에 만든다. 사본의 `SOURCE.md`에는 원본 링크와 바꾼 내용을 적는다 (Apache-2.0 원본은 변경 표시가 의무).
+
+## 집중 관리 대상
+
+모든 skill은 `SOURCE.md`에 출처와 용도가 기록된 **Lv.1(수집)** 상태다. 아래 3개만 먼저 실제 작업에 써 보며 단계를 올린다.
+
+| Skill | 고른 이유 | 현재 | 다음 단계 |
+|---|---|---|---|
+| [code-review](dev/review/code-review/) | 매 작업마다 반복되는 변경 리뷰. 첫 비교 실험(skill 유무에 따른 리뷰 품질) 대상 | Lv.1 | 실제 리뷰에 사용 → 비교 실험으로 Lv.4 |
+| [verification-before-completion](dev/testing/verification-before-completion/) | "증거 없는 완료 금지" 원칙을 에이전트에게 강제 | Lv.1 | 실제 작업에 사용 후 기록 |
+| [spec-driven-development](dev/planning/spec-driven-development/) | 구현 전 스펙·결정 사항 정리 (평소 일하는 방식과 같은 방향) | Lv.1 | 개인 프로젝트 스펙 작성에 사용 후 기록 |
+
+<sub>성숙도: Lv.1 수집 → Lv.2 커스터마이징 → Lv.3 리소스 결합 → Lv.4 검증 → Lv.5 자동화 → Lv.6 배포</sub>
 
 ## 목록
 
